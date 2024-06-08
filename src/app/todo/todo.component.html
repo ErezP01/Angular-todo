@@ -1,0 +1,13 @@
+<div class="flex flex-col items-center p-4 bg-gray-100 rounded shadow mt-4">
+  <h2 class="text-2xl font-bold mb-4">To-Do List</h2>
+  <div class="w-full mb-4">
+    <input [(ngModel)]="newTodo" placeholder="Add a new task" class="p-2 border rounded w-full" />
+    <button (click)="addTodo()" class="bg-green-500 text-white px-4 py-2 rounded mt-2">Add</button>
+  </div>
+  <ul class="w-full list-disc pl-4">
+    <li *ngFor="let todo of todos; let i = index" class="flex justify-between items-center mb-2">
+      <span>{{ todo }}</span>
+      <button (click)="removeTodo(i)" class="bg-red-500 text-white px-2 py-1 rounded">Remove</button>
+    </li>
+  </ul>
+</div>
